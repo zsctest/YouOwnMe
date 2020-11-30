@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -78,7 +79,7 @@ public class ShouLiFragment extends Fragment {
     public void onCreateContextMenu(ContextMenu menu,View v,ContextMenu.ContextMenuInfo menuInfo){
         menu.setHeaderTitle("上下文菜单");
         MenuInflater inflater = this.getActivity().getMenuInflater();       //getActivity()
-        inflater.inflate(R.menu.main,menu);
+        inflater.inflate(R.menu.menu_shou_li,menu);
         super.onCreateContextMenu(menu,v,menuInfo);
     }
 
@@ -90,7 +91,7 @@ public class ShouLiFragment extends Fragment {
         final ShouLiFragment that = this;
         switch(item.getItemId())
         {
-            case R.id.context_menu_item1:
+            case R.id.context_menu_item1_shouli:
                 //新建
                 //Log.i("result","新建中");
                 intent = new Intent(this.getContext(),EditShouLiActivity.class);    //intent的传输方向
@@ -101,7 +102,7 @@ public class ShouLiFragment extends Fragment {
                 intent.putExtra("shoulidate",dataBankForShouLi.getShouliRecords().get(position).getDate());
                 startActivityForResult(intent, REQUEST_CODE_ADD_NEW);                            //向EditBookActivity发送数据请求，requestCode唯一标识该活动
                 break;
-            case R.id.context_menu_item2:
+            case R.id.context_menu_item2_shouli:
                 //删除
                 AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
                 builder.setTitle(R.string.query);
@@ -114,7 +115,7 @@ public class ShouLiFragment extends Fragment {
                         //监听函数，在点击确定按钮后执行的操作
                         dataBankForShouLi.getShouliRecords().remove(position);
                         adapter.notifyDataSetChanged();
-//                        Toast.makeText(that.getActivity(),R.string.deleteOk,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(that.getActivity(),R.string.deleteOk,Toast.LENGTH_SHORT).show();
                     }
                 });
                 builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
@@ -124,21 +125,21 @@ public class ShouLiFragment extends Fragment {
                     }
                 });
                 builder.create().show();
-                Toast.makeText(that.getActivity(),R.string.deleteOk,Toast.LENGTH_SHORT).show();
+
                 break;
-            case R.id.context_menu_item3:
+            case R.id.context_menu_item3_shouli:
                 //重命名（修改）
                 Log.i("result","修改中");
                 intent = new Intent(this.getContext(),EditShouLiActivity.class);    //intent的传输方向
                 intent.putExtra("position", position);//获取当前的索引值
-                intent.putExtra("suiliname",dataBankForShouLi.getShouliRecords().get(position).getName());
-                intent.putExtra("suiliabout",dataBankForShouLi.getShouliRecords().get(position).getAbout());
-                intent.putExtra("suilimoney",dataBankForShouLi.getShouliRecords().get(position).getMoney());
-                intent.putExtra("suilidate",dataBankForShouLi.getShouliRecords().get(position).getDate());
+                intent.putExtra("shouliname",dataBankForShouLi.getShouliRecords().get(position).getName());
+                intent.putExtra("shouliabout",dataBankForShouLi.getShouliRecords().get(position).getAbout());
+                intent.putExtra("shoulimoney",dataBankForShouLi.getShouliRecords().get(position).getMoney());
+                intent.putExtra("shoulidate",dataBankForShouLi.getShouliRecords().get(position).getDate());
                 startActivityForResult(intent, REQUEST_CODE_RENAME_SHOULI);
-                Toast.makeText(that.getActivity(),R.string.renameOk,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(that.getActivity(),R.string.renameOk,Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.context_menu_item4:
+            case R.id.context_menu_item4_shouli:
                 //关于
 
                 Toast.makeText(that.getActivity(),R.string.about,Toast.LENGTH_SHORT).show();

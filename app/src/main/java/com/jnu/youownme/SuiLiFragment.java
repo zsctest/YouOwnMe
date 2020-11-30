@@ -79,7 +79,7 @@ public class SuiLiFragment extends Fragment {
     public void onCreateContextMenu(ContextMenu menu,View v,ContextMenu.ContextMenuInfo menuInfo){
         menu.setHeaderTitle("上下文菜单");
         MenuInflater inflater = this.getActivity().getMenuInflater();       //getActivity()
-        inflater.inflate(R.menu.main,menu);
+        inflater.inflate(R.menu.menu_sui_li,menu);
         super.onCreateContextMenu(menu,v,menuInfo);
     }
 
@@ -91,7 +91,7 @@ public class SuiLiFragment extends Fragment {
         final SuiLiFragment that = this;
         switch(item.getItemId())
         {
-            case R.id.context_menu_item1:
+            case R.id.context_menu_item1_suili:
                 //新建
                 //Log.i("result","新建中");
                 intent = new Intent(this.getContext(),EditSuiLiActivity.class);    //intent的传输方向
@@ -102,7 +102,7 @@ public class SuiLiFragment extends Fragment {
                 intent.putExtra("suilidate",dataBankForSuiLi.getSuiliRecords().get(position).getDate());
                 startActivityForResult(intent, REQUEST_CODE_ADD_NEW);                            //向EditBookActivity发送数据请求，requestCode唯一标识该活动
                 break;
-            case R.id.context_menu_item2:
+            case R.id.context_menu_item2_suili:
                 //删除
                 AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
                 builder.setTitle(R.string.query);
@@ -115,7 +115,7 @@ public class SuiLiFragment extends Fragment {
                         //监听函数，在点击确定按钮后执行的操作
                         dataBankForSuiLi.getSuiliRecords().remove(position);
                         adapter.notifyDataSetChanged();
-//                        Toast.makeText(that.getActivity(),R.string.deleteOk,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(that.getActivity(),R.string.deleteOk,Toast.LENGTH_SHORT).show();
                     }
                 });
                 builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
@@ -125,9 +125,9 @@ public class SuiLiFragment extends Fragment {
                     }
                 });
                 builder.create().show();
-                Toast.makeText(that.getActivity(),R.string.deleteOk,Toast.LENGTH_SHORT).show();
+
                 break;
-            case R.id.context_menu_item3:
+            case R.id.context_menu_item3_suili:
                 //重命名（修改）
                 Log.i("result","修改中");
                 intent = new Intent(this.getContext(),EditSuiLiActivity.class);    //intent的传输方向
@@ -137,9 +137,9 @@ public class SuiLiFragment extends Fragment {
                 intent.putExtra("suilimoney",dataBankForSuiLi.getSuiliRecords().get(position).getMoney());
                 intent.putExtra("suilidate",dataBankForSuiLi.getSuiliRecords().get(position).getDate());
                 startActivityForResult(intent, REQUEST_CODE_RENAME_SUILI);
-                Toast.makeText(that.getActivity(),R.string.renameOk,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(that.getActivity(),R.string.renameOk,Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.context_menu_item4:
+            case R.id.context_menu_item4_suili:
                 //关于
                 //TODO:跳转到详情页
                 Toast.makeText(that.getActivity(),R.string.about,Toast.LENGTH_SHORT).show();
