@@ -21,4 +21,9 @@
     <string name="edit_date">日期</string>
     <string name="edit_page_title">修改随礼记录</string>
     <string name="newOk">新建成功</string>
+    <string name="shou_li_records">修改收礼记录</string>
+    <string name="shou_li_name">是谁贺礼</string>
+    <string name="shou_li_about">因何贺礼</string>
+    <string name="shou_li_money">贺礼金额</string>
+    <string name="shou_li_date">贺礼日期</string>
 </resources>

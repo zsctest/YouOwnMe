@@ -7,17 +7,17 @@
     tools:context=".EditSuiLiActivity">
 
     <TextView
-        android:id="@+id/text_view_suili_to"
+        android:id="@+id/text_view_shouli_from"
         android:layout_width="69dp"
         android:layout_height="26dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="156dp"
-        android:text="@string/sui_li_name"
+        android:text="@string/shou_li_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_text_suili_to"
+        android:id="@+id/edit_text_shouli_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -32,18 +32,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_suili_about"
+        android:id="@+id/text_view_shouli_about"
         android:layout_width="69dp"
         android:layout_height="26dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="256dp"
-        android:text="@string/sui_li_about"
+        android:text="@string/shou_li_about"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateIds" />
 
     <EditText
-        android:id="@+id/edit_text_suili_about"
+        android:id="@+id/edit_text_shouli_about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -58,18 +58,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_suili_money"
+        android:id="@+id/text_view_shouli_money"
         android:layout_width="69dp"
         android:layout_height="26dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="352dp"
-        android:text="@string/sui_li_money"
+        android:text="@string/shou_li_money"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateIds" />
 
     <EditText
-        android:id="@+id/edit_text_suili_money"
+        android:id="@+id/edit_text_shouli_money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -84,17 +84,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_suili_date"
+        android:id="@+id/text_view_shouli_date"
         android:layout_width="69dp"
         android:layout_height="26dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="444dp"
-        android:text="@string/sui_li_date"
+        android:text="@string/shou_li_date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_text_suili_date"
+        android:id="@+id/edit_text_shouli_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -129,11 +129,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_suili"
+        android:id="@+id/text_view_shouli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
-        android:text="@string/edit_page_title"
+        android:text="@string/shou_li_records"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

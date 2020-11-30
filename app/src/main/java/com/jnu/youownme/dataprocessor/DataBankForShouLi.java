@@ -8,14 +8,14 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class DataBankForShouLi {
-    private ArrayList<com.jnu.youownme.dataprocessor.SuiLi> arrayListShouli=new ArrayList<>();
+    private ArrayList<com.jnu.youownme.dataprocessor.ShouLi> arrayListShouli=new ArrayList<>();
     private Context context;
     private final String RECORD_FILE_NAME="shouli.txt";
     public DataBankForShouLi(Context context)
     {
         this.context=context;
     }
-    public ArrayList<com.jnu.youownme.dataprocessor.SuiLi> getShouliRecords() {
+    public ArrayList<com.jnu.youownme.dataprocessor.ShouLi> getShouliRecords() {
         return arrayListShouli;
     }
 
@@ -39,7 +39,7 @@ public class DataBankForShouLi {
         arrayListShouli=new ArrayList<>();
         try {
             ois = new ObjectInputStream(context.openFileInput(RECORD_FILE_NAME));
-            arrayListShouli = (ArrayList<SuiLi>) ois.readObject();
+            arrayListShouli = (ArrayList<ShouLi>) ois.readObject();
         } catch (Exception e) {
             e.printStackTrace();
         }
