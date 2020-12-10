@@ -141,7 +141,6 @@ public class SuiLiFragment extends Fragment {
                 break;
             case R.id.context_menu_item4_suili:
                 //关于
-                //TODO:跳转到详情页
                 Toast.makeText(that.getActivity(),R.string.about,Toast.LENGTH_SHORT).show();
                 break;
             default:
@@ -203,3 +202,5 @@ public class SuiLiFragment extends Fragment {
 
 //TODO:添加悬浮的新建菜单
 //TODO:修改随礼记录时，数据应为原有数据，新建则应为默认数据，现在是相反的,建议新建时直接调取另一个
+//TODO:为ListView项添加详情页，好像不需要？
+//TODO:添加日历主页,关于日期的提取和记录的绑定
