@@ -30,7 +30,7 @@
     <TextView
         android:id="@+id/text_view_money"
         android:textSize="40px"
-        android:layout_width="60dp"
+        android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:gravity="center_vertical"

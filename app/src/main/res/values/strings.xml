@@ -26,4 +26,7 @@
     <string name="shou_li_about">因何贺礼</string>
     <string name="shou_li_money">贺礼金额</string>
     <string name="shou_li_date">贺礼日期</string>
+    <string name="title_suili">随礼</string>
+    <string name="title_home">首页</string>
+    <string name="title_shouli">收礼</string>
 </resources>

@@ -7,17 +7,49 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/table_layout_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </com.google.android.material.tabs.TabLayout>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
+        android:layout_height="553dp"
+        android:layout_weight="1">
 
     </androidx.viewpager.widget.ViewPager>
+
+
+    <View android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:alpha="0.6"
+        android:background="@android:color/darker_gray"
+        />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/table_layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_weight="0"
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="@android:color/holo_blue_dark"
+        app:tabTextColor="@android:color/black">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem_suili"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_suili" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_home" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem_shouli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_shouli" />
+    </com.google.android.material.tabs.TabLayout>
+
+
 </LinearLayout>
