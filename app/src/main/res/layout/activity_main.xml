@@ -36,13 +36,13 @@
             android:id="@+id/tabItem_suili"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_suili" />
+            android:text="@string/title_home" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tabItem_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_home" />
+            android:text="@string/title_suili" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tabItem_shouli"

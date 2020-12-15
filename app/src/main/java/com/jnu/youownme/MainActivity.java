@@ -61,13 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         ArrayList<Fragment> datas = new ArrayList<Fragment>();
+        datas.add(new HomeFragment());
         datas.add(new SuiLiFragment());
-        datas.add(new HomePageFragment());
         datas.add(new ShouLiFragment());
 
         ArrayList<String> titles = new ArrayList<String>();
-        titles.add("随礼");
         titles.add("首页");
+        titles.add("随礼");
         titles.add("收礼");
 
         MyPageAdapter myPageAdapter = new MyPageAdapter(this.getSupportFragmentManager());

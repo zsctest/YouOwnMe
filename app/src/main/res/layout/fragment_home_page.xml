@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomePageFragment">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -28,8 +30,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:src="@mipmap/ic_down" />
+            android:layout_marginStart="5dp"
+            android:src="@mipmap/ic_down"
+            android:contentDescription="@string/picture" />
     </LinearLayout>
 
     <com.haibin.calendarview.CalendarView
@@ -44,6 +47,7 @@
         app:month_view="com.calendar.MyMonthView"
         app:month_view_show_mode="mode_fix"
         app:other_month_text_color="#cccccc"
-        app:week_line_background="#e6e6e6" />
-</FrameLayout>
+        app:week_line_background="#e6e6e6"
+        app:select_mode="default_mode"/>
 
+</LinearLayout>

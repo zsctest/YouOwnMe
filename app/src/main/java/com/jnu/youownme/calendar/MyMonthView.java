@@ -13,6 +13,7 @@ import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.MonthView;
 import com.jnu.youownme.R;
 
+//自定义日历样式
 public class MyMonthView extends MonthView {
 
     private Paint paint1 = new Paint();
