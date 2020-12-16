@@ -7,7 +7,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.material.tabs.TabLayout;
 import com.jnu.youownme.dataprocessor.DataGenerator;
@@ -61,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         ArrayList<Fragment> datas = new ArrayList<Fragment>();
+//        datas.add(new HomePageFragment());
         datas.add(new HomeFragment());
+        Log.i("msp","homefragment ok");
         datas.add(new SuiLiFragment());
         datas.add(new ShouLiFragment());
 
@@ -86,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.getTabAt(1).setIcon(R.drawable.home_page_on);
         mTabLayout.getTabAt(2).setIcon(R.drawable.money_in);
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 for(int i = 0;i<mTabLayout.getTabCount();i++){

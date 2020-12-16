@@ -25,7 +25,7 @@ public class MonthDateView extends View {
     private int mSelectBGColor = Color.parseColor("#1FC2F3");
     private int mCurrentColor = Color.parseColor("#ff0000");
     private int mCurrYear,mCurrMonth,mCurrDay;
-    private int mSelYear,mSelMonth,mSelDay;
+    private int mSelYear=2020,mSelMonth=12,mSelDay=16;
     private int mColumnSize,mRowSize;
     private DisplayMetrics mDisplayMetrics;
     private int mDaySize = 18;
@@ -241,7 +241,7 @@ public class MonthDateView extends View {
     }
     /**
      * 获取选择的日期
-     * @param mSelDay
+     * @parammSelDay
      */
     public int getmSelDay() {
         return this.mSelDay;
