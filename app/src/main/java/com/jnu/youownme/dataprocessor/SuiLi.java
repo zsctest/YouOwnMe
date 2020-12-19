@@ -5,7 +5,7 @@ import com.jnu.youownme.R;
 import java.io.Serializable;
 
 public class SuiLi implements Serializable {
-    private static int imageResourceId = R.drawable.suili;
+//    private static int imageResourceId = R.drawable.suili;
     private String name;
     private String about;
     private String money;
@@ -19,9 +19,9 @@ public class SuiLi implements Serializable {
         this.date = date;
     }
 
-    public static int getImageResourceId() {
-        return imageResourceId;
-    }
+//    public static int getImageResourceId() {
+//        return imageResourceId;
+//    }
 
 
     public String getName() {

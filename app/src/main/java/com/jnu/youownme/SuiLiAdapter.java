@@ -33,7 +33,7 @@ public class SuiLiAdapter extends ArrayAdapter<SuiLi> {
         else
             view = convertView;       //convertView是否缓存
         assert suilirecord != null;
-        ((ImageView) view.findViewById(R.id.image_view_suili_icon)).setImageResource(SuiLi.getImageResourceId());
+        ((ImageView) view.findViewById(R.id.image_view_suili_icon)).setImageResource(R.drawable.suili);
         ((TextView) view.findViewById(R.id.text_view_name)).setText(suilirecord.getName());
         ((TextView) view.findViewById(R.id.text_view_about)).setText(suilirecord.getAbout());
         ((TextView) view.findViewById(R.id.text_view_money)).setText('￥'+suilirecord.getMoney());

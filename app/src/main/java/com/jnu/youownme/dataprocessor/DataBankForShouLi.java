@@ -1,6 +1,7 @@
 package com.jnu.youownme.dataprocessor;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -40,6 +41,7 @@ public class DataBankForShouLi {
         try {
             ois = new ObjectInputStream(context.openFileInput(RECORD_FILE_NAME));
             arrayListShouli = (ArrayList<ShouLi>) ois.readObject();
+            Log.i("date","size for shouli:"+arrayListShouli.size()+"-"+arrayListShouli.get(0).getDate());
         } catch (Exception e) {
             e.printStackTrace();
         }

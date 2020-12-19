@@ -35,7 +35,7 @@ public class ShouLiAdapter extends ArrayAdapter<ShouLi> {
         else
             view = convertView;       //convertView是否缓存
         assert shoulirecord != null;
-        ((ImageView) view.findViewById(R.id.image_view_shouli_icon)).setImageResource(ShouLi.getImageResourceId());
+        ((ImageView) view.findViewById(R.id.image_view_shouli_icon)).setImageResource(R.drawable.shouli);
         ((TextView) view.findViewById(R.id.text_view_name)).setText(shoulirecord.getName());
         ((TextView) view.findViewById(R.id.text_view_about)).setText(shoulirecord.getAbout());
         ((TextView) view.findViewById(R.id.text_view_money)).setText('￥'+shoulirecord.getMoney());

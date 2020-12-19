@@ -5,7 +5,7 @@ import com.jnu.youownme.R;
 import java.io.Serializable;
 
 public class ShouLi implements Serializable {
-    private static int imageResourceId = R.drawable.shouli;
+//    private static int imageResourceId = R.drawable.shouli;
     private String name;
     private String about;
     private String money;
@@ -18,9 +18,9 @@ public class ShouLi implements Serializable {
         this.date = date;
     }
 
-    public static int getImageResourceId() {
-        return imageResourceId;
-    }
+//    public static int getImageResourceId() {
+//        return imageResourceId;
+//    }
 
     public String getName() {
         return name;
@@ -37,6 +37,7 @@ public class ShouLi implements Serializable {
     public String getDate() {
         return date;
     }
+
 
     public void setName(String name) {
         this.name = name;
