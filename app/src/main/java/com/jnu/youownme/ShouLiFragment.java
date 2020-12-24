@@ -71,7 +71,10 @@ public class ShouLiFragment extends Fragment {
         if(0==dataBankForShouLi.getShouliRecords().size())
         {
             dataBankForShouLi.getShouliRecords().add(
-                    new ShouLi("赵某某","结婚大喜","300","2020/11/26"));
+                    new ShouLi("赵某某","xxx","xxx","xxxx/xx/xx"));
+        }
+        else if(2 == dataBankForShouLi.getShouliRecords().size()){
+            dataBankForShouLi.getShouliRecords().remove(1);
         }
     }
 
@@ -115,6 +118,7 @@ public class ShouLiFragment extends Fragment {
                         //监听函数，在点击确定按钮后执行的操作
                         dataBankForShouLi.getShouliRecords().remove(position);
                         adapter.notifyDataSetChanged();
+                        dataBankForShouLi.Save();
                         Toast.makeText(that.getActivity(),R.string.deleteOk,Toast.LENGTH_SHORT).show();
                     }
                 });

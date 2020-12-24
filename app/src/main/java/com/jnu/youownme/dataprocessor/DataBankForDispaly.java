@@ -50,11 +50,16 @@ public class DataBankForDispaly {
             //从收礼记录那获取
             ois_shouli = new ObjectInputStream(context.openFileInput(RECORD_FILE_SHOULI));
             tempListShouLi = (ArrayList<ShouLi>) ois_shouli.readObject();
+            if(arrayListDisplay.size()>0 && tempListShouLi.size() == 0) {
+                arrayListDisplay.clear();
+                Log.i("date","remove1");
+            }
             //TODO:无法匹配字符串
             for(int i=0;i<tempListShouLi.size();++i){
                 if(getShouLi(date,tempListShouLi,i)!=null)
                     arrayListDisplay.add(getShouLi(date,tempListShouLi,i));
             }
+            tempListShouLi.clear();
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -63,6 +68,15 @@ public class DataBankForDispaly {
             //从随礼记录那获取
             ois_suili = new ObjectInputStream(context.openFileInput(RECORD_FILE_SUILI));
             tempListSuiLi = (ArrayList<SuiLi>) ois_suili.readObject();
+            if(arrayListDisplay.size()>0 && tempListSuiLi.size() == 0) {
+                arrayListDisplay.clear();
+                Log.i("date","remove1");
+            }
+            for(int i=0;i<tempListSuiLi.size();++i){
+                if(getSuiLi(date,tempListSuiLi,i)!=null)
+                    arrayListDisplay.add(getSuiLi(date,tempListSuiLi,i));
+            }
+            tempListSuiLi.clear();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -85,23 +99,32 @@ public class DataBankForDispaly {
 
     protected HomeDisplay getShouLi(String str,ArrayList<ShouLi> list,int i){
         String name,date,about,money;
+        int image;
         date = list.get(i).getDate();
         if(str.equals(date)) {
             Log.i("date","true");
             name = list.get(i).getName();
             about = list.get(i).getAbout();
-            money = list.get(i).getMoney();
-            return new HomeDisplay(name, about, money, date);
+            money = "￥"+list.get(i).getMoney();
+            image = R.drawable.shouli;
+            return new HomeDisplay(image,name, about, money, date);
         }
         return null;
     }
 
     protected HomeDisplay getSuiLi(String str,ArrayList<SuiLi> list,int i){
         String name,date,about,money;
-        name = list.get(i).getName();
+        int image;
         date = list.get(i).getDate();
-        about = list.get(i).getAbout();
-        money = list.get(i).getMoney();
-        return new HomeDisplay(name,about,money,date);
+        if(str.equals(date)) {
+            name = list.get(i).getName();
+            about = list.get(i).getAbout();
+            money = "￥"+list.get(i).getMoney();
+            image = R.drawable.suili;
+            return new HomeDisplay(image,name, about, money, date);
+        }
+        return null;
     }
 }
+//TODO：合并getShouli和getSuili
+//TODO:简化Load代码

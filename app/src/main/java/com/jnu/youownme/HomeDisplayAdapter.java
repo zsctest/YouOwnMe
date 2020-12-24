@@ -35,10 +35,10 @@ public class HomeDisplayAdapter extends ArrayAdapter<HomeDisplay> {
         else
             view = convertView;       //convertView是否缓存
         assert homedisplayrecord != null;
-        ((ImageView) view.findViewById(R.id.image_view_home_icon)).setImageResource(R.drawable.warn);
+        ((ImageView) view.findViewById(R.id.image_view_home_icon)).setImageResource(homedisplayrecord.getImageResourceId());
         ((TextView) view.findViewById(R.id.text_view_home_name)).setText(homedisplayrecord.getName());
         ((TextView) view.findViewById(R.id.text_view_home_about)).setText(homedisplayrecord.getAbout());
-        ((TextView) view.findViewById(R.id.text_view_home_money)).setText('￥'+homedisplayrecord.getMoney());
+        ((TextView) view.findViewById(R.id.text_view_home_money)).setText(homedisplayrecord.getMoney());
         ((TextView) view.findViewById(R.id.text_view_home_date)).setText(homedisplayrecord.getDate());
         return view;
     }

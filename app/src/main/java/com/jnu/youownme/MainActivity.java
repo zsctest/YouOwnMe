@@ -10,7 +10,10 @@ import androidx.viewpager.widget.ViewPager;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.jnu.youownme.dataprocessor.DataGenerator;
 
@@ -59,6 +62,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         MainActivity that = this;
         initView();
+
+        FloatingActionButton fab = findViewById(R.id.fab2);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+
+                //TODO:设置监听，询问选择添加随礼还是收礼
+            }
+        });
     }
 
     private void initView() {
@@ -114,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
         });
         mTabLayout.setupWithViewPager(viewPager);
     }
+
+
 
 
 }

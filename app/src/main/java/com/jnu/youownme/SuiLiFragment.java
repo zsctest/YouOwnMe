@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.jnu.youownme.dataprocessor.DataBankForSuiLi;
+import com.jnu.youownme.dataprocessor.ShouLi;
 import com.jnu.youownme.dataprocessor.SuiLi;
 
 import static android.app.Activity.RESULT_OK;
@@ -71,7 +72,9 @@ public class SuiLiFragment extends Fragment {
         if(0==dataBankForSuiLi.getSuiliRecords().size())
         {
             dataBankForSuiLi.getSuiliRecords().add(
-                    new SuiLi("赵某某","结婚大喜","300","2020/11/26"));
+                    new SuiLi("赵某某","xxx","xxx","xxxx/xx/xx"));
+        }else if(2 == dataBankForSuiLi.getSuiliRecords().size()){
+            dataBankForSuiLi.getSuiliRecords().remove(1);
         }
     }
 
@@ -115,6 +118,7 @@ public class SuiLiFragment extends Fragment {
                         //监听函数，在点击确定按钮后执行的操作
                         dataBankForSuiLi.getSuiliRecords().remove(position);
                         adapter.notifyDataSetChanged();
+                        dataBankForSuiLi.Save();
                         Toast.makeText(that.getActivity(),R.string.deleteOk,Toast.LENGTH_SHORT).show();
                     }
                 });

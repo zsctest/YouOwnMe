@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 
 public class HomeDisplay implements Serializable {
-//    private int imageResourceId = R.drawable.title;
+    private int imageResourceId = R.drawable.warn;
     private String name;
     private String about;
     private String money;
@@ -21,34 +21,34 @@ public class HomeDisplay implements Serializable {
         this.date = date;
     }
 
-//    public HomeDisplay(int imageResourceId, String name, String about, String money, String date) {
-//        this.imageResourceId = imageResourceId;
-//        this.name = name;
-//        this.about = about;
-//        this.money = money;
-//        this.date = date;
-//    }
-
-    public HomeDisplay(ShouLi obj){
-//        this.imageResourceId = obj.getImageResourceId();
-        this.name = obj.getName();
-        this.about = obj.getAbout();
-        this.money = obj.getMoney();
-        this.date = obj.getMoney();
+    public HomeDisplay(int imageResourceId, String name, String about, String money, String date) {
+        this.imageResourceId = imageResourceId;
+        this.name = name;
+        this.about = about;
+        this.money = money;
+        this.date = date;
     }
 
-    public HomeDisplay(SuiLi obj){
+//    public HomeDisplay(ShouLi obj){
 //        this.imageResourceId = obj.getImageResourceId();
-        this.name = obj.getName();
-        this.about = obj.getAbout();
-        this.money = obj.getMoney();
-        this.date = obj.getMoney();
-    }
-
-//    public int getImageResourceId() {
-//        return imageResourceId;
+//        this.name = obj.getName();
+//        this.about = obj.getAbout();
+//        this.money = obj.getMoney();
+//        this.date = obj.getMoney();
+//    }
+//
+//    public HomeDisplay(SuiLi obj){
+//        this.imageResourceId = obj.getImageResourceId();
+//        this.name = obj.getName();
+//        this.about = obj.getAbout();
+//        this.money = obj.getMoney();
+//        this.date = obj.getMoney();
 //    }
 
+    public int getImageResourceId() {
+        return imageResourceId;
+    }
+//
 //    public void setImageResourceId(int imageResourceId) {
 //        this.imageResourceId = imageResourceId;
 //    }

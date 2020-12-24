@@ -65,11 +65,11 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final View v = view;
-        List<Integer> list = new ArrayList<Integer>();
-        list.add(10);
-        list.add(12);
-        list.add(15);
-        list.add(16);
+//        List<Integer> list = new ArrayList<Integer>();
+//        list.add(10);
+//        list.add(12);
+//        list.add(15);
+//        list.add(16);
 
         iv_left = (ImageView) that.getActivity().findViewById(R.id.iv_left);
         iv_right = (ImageView) that.getActivity().findViewById(R.id.iv_right);
@@ -79,7 +79,7 @@ public class HomeFragment extends Fragment {
         tv_today = (TextView) that.getActivity().findViewById(R.id.tv_today);
 
         monthDateView.setTextView(tv_date, tv_week);
-        monthDateView.setDaysHasThingList(list);
+//        monthDateView.setDaysHasThingList(list);
         monthDateView.setDateClick(new MonthDateView.DateClick() {
 
             @Override
@@ -91,19 +91,24 @@ public class HomeFragment extends Fragment {
                 dataBankForDispaly = new DataBankForDispaly(that.getContext());
                 dataBankForDispaly.Load(date);
                 Log.i("date","size:"+dataBankForDispaly.getArrayListDisplay().size());
-                adapter = new HomeDisplayAdapter(that.getContext(),R.layout.items_home_display,dataBankForDispaly.getArrayListDisplay());
-                ListView listview = ((ListView) recordView.findViewById(R.id.list_view_home_display));
-                listview.setAdapter(adapter);
+                if(dataBankForDispaly.getArrayListDisplay().size()>0) {
+                    adapter = new HomeDisplayAdapter(that.getContext(), R.layout.items_home_display, dataBankForDispaly.getArrayListDisplay());
+                    ListView listview = ((ListView) recordView.findViewById(R.id.list_view_home_display));
+                    listview.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                }else{
+                    dataBankForDispaly.getArrayListDisplay().add(new HomeDisplay("空空如也","","",""));
+                    adapter = new HomeDisplayAdapter(that.getContext(), R.layout.items_home_display, dataBankForDispaly.getArrayListDisplay());
+                    ListView listview = ((ListView) recordView.findViewById(R.id.list_view_home_display));
+                    listview.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                }
 
             }
         });
-//        initData(date);
-//        initView();
+
         setOnlistener();
-//        if(dataBankForDispaly.getArrayListDisplay().size()>0){
-//            //TODO:显示list view数据
-//            adapter.notifyDataSetChanged();
-//        }
+
     }
 
     private void setOnlistener(){
@@ -132,23 +137,5 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void initView(){
-        //初始化listview
-        adapter = new HomeDisplayAdapter(that.getContext(),R.layout.items_home_display,dataBankForDispaly.getArrayListDisplay());
-        ListView listview = ((ListView) recordView.findViewById(R.id.list_view_home_display));
-        listview.setAdapter(adapter);
-        this.registerForContextMenu(listview);
-    }
-
-
-    private void initData(String date){
-        //初始化数据，应该放在监听函数里
-        dataBankForDispaly = new DataBankForDispaly(that.getContext());
-        dataBankForDispaly.Load(date);
-//        dataBankForDispaly.getArrayListDisplay().add(
-//                    new HomeDisplay("姓名","关于","金额","时间")
-//            );
-//        dataBankForDispaly.Save();
-//        Log.i("date",dataBankForDispaly.getArrayListDisplay().get(0).getDate());
-    }
 }
+//TODO：考虑要不要设置提示
