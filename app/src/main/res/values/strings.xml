@@ -31,4 +31,10 @@
     <string name="title_shouli">收礼</string>
     <string name="picture">picture</string>
     <string name="submit">点击某一天添加记录</string>
+    <string name="add_suili_record">添加随礼记录</string>
+    <string name="add_shouli_record">添加收礼记录</string>
+    <string name="add_name">姓名</string>
+    <string name="add_about">原因</string>
+    <string name="add_money">金额</string>
+    <string name="add_date">日期</string>
 </resources>

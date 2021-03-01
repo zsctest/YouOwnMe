@@ -25,6 +25,8 @@ import com.jnu.youownme.dataprocessor.DataBankForShouLi;
 import com.jnu.youownme.dataprocessor.ShouLi;
 
 
+import java.util.ArrayList;
+
 import static android.app.Activity.RESULT_OK;
 
 /**
@@ -73,8 +75,12 @@ public class ShouLiFragment extends Fragment {
             dataBankForShouLi.getShouliRecords().add(
                     new ShouLi("赵某某","xxx","xxx","xxxx/xx/xx"));
         }
-        else if(2 == dataBankForShouLi.getShouliRecords().size()){
-            dataBankForShouLi.getShouliRecords().remove(1);
+        else if(2 >= dataBankForShouLi.getShouliRecords().size()){
+            for(int i = 0;i<dataBankForShouLi.getShouliRecords().size();++i){
+                if(dataBankForShouLi.getShouliRecords().get(i).getAbout().equals("xxx"))
+                    dataBankForShouLi.getShouliRecords().remove(i);
+            }
+
         }
     }
 

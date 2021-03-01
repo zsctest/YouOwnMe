@@ -24,6 +24,8 @@ import com.jnu.youownme.dataprocessor.DataBankForSuiLi;
 import com.jnu.youownme.dataprocessor.ShouLi;
 import com.jnu.youownme.dataprocessor.SuiLi;
 
+import java.util.ArrayList;
+
 import static android.app.Activity.RESULT_OK;
 
 /**
@@ -73,8 +75,15 @@ public class SuiLiFragment extends Fragment {
         {
             dataBankForSuiLi.getSuiliRecords().add(
                     new SuiLi("赵某某","xxx","xxx","xxxx/xx/xx"));
-        }else if(2 == dataBankForSuiLi.getSuiliRecords().size()){
-            dataBankForSuiLi.getSuiliRecords().remove(1);
+        }else if(2 >= dataBankForSuiLi.getSuiliRecords().size()){
+            for(int i = 0;i<dataBankForSuiLi.getSuiliRecords().size();++i){
+                if(dataBankForSuiLi.getSuiliRecords().get(i).getAbout().equals("xxx"))
+                {
+                    dataBankForSuiLi.getSuiliRecords().remove(i);
+                    Log.i("date","remove"+i);
+                }
+
+            }
         }
     }
 

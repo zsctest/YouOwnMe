@@ -33,10 +33,10 @@ public class EditShouLiActivity extends AppCompatActivity {
         Log.i("result in Edit", shoulinameplus + ' ' + shouliaboutplus + ' ' + shoulimoneyplus + ' '
                 + shoulidateplus);
 
-        EditShouliName = (EditText) findViewById(R.id.edit_text_shouli_from);
-        EditShouliAbout = (EditText) findViewById(R.id.edit_text_shouli_about);
-        EditShouliMoney = (EditText) findViewById(R.id.edit_text_shouli_money);
-        EditShouliDate = (EditText) findViewById(R.id.edit_text_shouli_date);
+        EditShouliName = (EditText) findViewById(R.id.edit_text_add_name);
+        EditShouliAbout = (EditText) findViewById(R.id.edit_text_add_about);
+        EditShouliMoney = (EditText) findViewById(R.id.edit_text_add_money);
+        EditShouliDate = (EditText) findViewById(R.id.edit_text_add_date);
         if (null != shoulinameplus) {
             EditShouliName.setText(shoulinameplus);
             EditShouliAbout.setText(shouliaboutplus);

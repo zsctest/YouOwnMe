@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,9 +19,11 @@ import com.google.android.material.tabs.TabLayout;
 import com.jnu.youownme.dataprocessor.DataGenerator;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
+    private MainActivity that = this;
 
     public class MyPageAdapter extends FragmentPagerAdapter {
         ArrayList<Fragment> datas;
@@ -61,16 +64,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MainActivity that = this;
+
         initView();
 
         FloatingActionButton fab = findViewById(R.id.fab2);
         fab.setOnClickListener(new View.OnClickListener() {
+            Intent intentMain;
+            Calendar cal = Calendar.getInstance();
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-
-
+                intentMain = new Intent(MainActivity.this,AddRecordActivity.class);
+                String datestr = cal.get(Calendar.YEAR)+"/"+cal.get(Calendar.MONTH)+"/"+cal.get(Calendar.DATE);
+                intentMain.putExtra("date",datestr);
+                startActivity(intentMain);
                 //TODO:设置监听，询问选择添加随礼还是收礼
             }
         });
