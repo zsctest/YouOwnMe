@@ -1,4 +1,6 @@
-![Uploading S10301-21061176.gif…]()
+
+https://user-images.githubusercontent.com/57051597/118904519-a3b2f700-b94c-11eb-8f0e-07b6d1ebaf29.mp4
+
 
 # YouOwnMe——人情往来APP
 #### 已实现功能
