@@ -15,3 +15,12 @@ https://user-images.githubusercontent.com/57051597/118904519-a3b2f700-b94c-11eb-
 3.	收礼页
 - 显示所有收礼记录
 - 记录包括送礼人的姓名、收礼原因、收礼金额和收礼日期
+
+
+## 涉及知识点
+1. 包导入
+2. ListView
+3. Tabyout
+4. fragment
+5. 上下文菜单
+6. Intent与适配器
